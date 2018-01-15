@@ -1,14 +1,17 @@
 <template lang="pug">
   section.container
     main-screen
+    products
 </template>
 
 <script>
 import MainScreen from '~/components/MainScreen.vue'
+import Products from '~/components/Products.vue'
 
 export default {
   components: {
-    MainScreen
+    'main-screen': MainScreen,
+    'products': Products
   }
 }
 </script>
