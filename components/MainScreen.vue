@@ -19,7 +19,7 @@
       .main-screen__title
           h1.title Металлические двери
           h4.desc Производство входных металлических дврей. Мы будем рады сотрудничеству.
-          button.button--about Подробнее
+          button.button.button--about Подробнее
       .main-screen__facts
         .fact(v-for="fact in facts")
           .fact__item
@@ -137,22 +137,7 @@ export default {
       font-family: 'GothamPro-Light';
     }
     .button--about {
-      border: 2px solid $red;
-      border-radius: 5px;
-      font-size: 24px;
-      font-family: 'GothamPro-Light';
-      background-color: transparent;
-      color: $white;
       margin: 80px auto;
-      outline: none;
-      padding: 10px 40px;
-      cursor: pointer;
-      transition: all 0.3s ease-in-out;
-      &:hover {
-        background-color: white;
-        color: $dark-grey;
-      }
-
     }
   }
 
