@@ -1,29 +1,32 @@
 <template lang="pug">
   .main-screen
-    header.main-screen__header
-      .logo
-      .navigation-container
-        .row
-          .e-mail
-            .e-mail__icon.i-envelope
-            span.e-mail__text info@astex-group.com.ua
-          .phone
-            .phone__icon.i-phone
-            span.phone__text +38(057) 725 29 95
-            a.callback перезвоните мне!
-        .row
-          navigation-component
-    .main-screen__title
-      .row
-        h1.title Металлические двери
-        h4.desc Производство входных металлических дврей. Мы будем рады сотрудничеству.
-      .row
-        button.button--about Подробнее
-    .main-screen__facts
-      .fact(v-for="fact in facts")
-        .i-checked
-        .fact-desc
-          p {{fact.text}}
+    .content-wrapper
+      header.main-screen__header
+        nuxt-link.logo(to="/")
+        .navigation-container
+          .row.contacts
+            .row-item.e-mail
+              .icon.i-envelope
+              span.e-mail__text info@astex-group.com.ua
+            .row-item.phone
+              .icon.i-phone
+              ul
+                li.phone__text +38(057) 725 29 95
+                li.callback
+                  a перезвоните мне!
+          .row.navigation
+            navigation-component
+      .main-screen__title
+          h1.title Металлические двери
+          h4.desc Производство входных металлических дврей. Мы будем рады сотрудничеству.
+          button.button--about Подробнее
+      .main-screen__facts
+        .fact(v-for="fact in facts")
+          .fact__item
+            .i-checked
+          .fact__item.fact-desc
+            h3 {{fact.title}}
+            p {{fact.text}}
 </template>
 
 <script>
@@ -37,9 +40,9 @@ export default {
   data () {
     return {
       facts: [
-        {text: 'Производство входных металлических дврей. Мы будем рады сотрудничеству.'},
-        {text: 'Производство входных металлических дврей. Мы будем рады сотрудничеству.'},
-        {text: 'Производство входных металлических дврей. Мы будем рады сотрудничеству.'}
+        {title: 'Доступность', text: 'Производство входных металлических дврей. Мы будем рады сотрудничеству.'},
+        {title: 'Надежность', text: 'Производство входных металлических дврей. Мы будем рады сотрудничеству.'},
+        {title: 'Гарантия качества', text: 'Производство входных металлических дврей. Мы будем рады сотрудничеству.'}
       ]
     }
   }
@@ -49,6 +52,7 @@ export default {
 <style lang="scss" scoped>
 .main-screen {
   display: flex;
+  align-items: center;
   flex-direction: column;
   width: 100vw;
   height: 100vh;
@@ -56,11 +60,19 @@ export default {
   background-size: cover;
   color: $white;
 
+  & .content-wrapper {
+    width: 80vw;
+    max-width: 1280px;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
   &__header {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: stretch;
-    max-width: 1280px;
     & .logo {
       width: 130px;
       height: 180px;
@@ -73,9 +85,113 @@ export default {
       justify-content: flex-end;
       & .row {
         display: flex;
+        &.contacts {
+          flex: 1 1 auto;
+          justify-content: flex-end;
+        }
+
+        & .row-item {
+          display: flex;
+          align-items: center;
+          flex-wrap: wrap;
+          &.e-mail {
+            margin-right: 30px;
+          }
+          &.phone {
+            ul {
+              list-style: none;
+              padding: 0;
+              margin: 0;
+              .phone__text {
+                font-size: 19px;
+              }
+              .callback {
+                color: $red;
+                text-align: left;
+                padding-left: 5px;
+                cursor: pointer;
+              }
+            }
+          }
+          & .icon {
+            margin-right: 20px;
+          }
+        }
       }
     }
 
+  }
+
+  &__title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    & .title {
+      font-size: 48px;
+      font-family: 'GothamPro-Bold';
+      text-transform: uppercase;
+    }
+    & .desc {
+      font-size: 24px;
+      font-family: 'GothamPro-Light';
+    }
+    .button--about {
+      border: 2px solid $red;
+      border-radius: 5px;
+      font-size: 24px;
+      font-family: 'GothamPro-Light';
+      background-color: transparent;
+      color: $white;
+      margin: 80px auto;
+      outline: none;
+      padding: 10px 40px;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+      &:hover {
+        background-color: white;
+        color: $dark-grey;
+      }
+
+    }
+  }
+
+  &__facts {
+    display: flex;
+    justify-content: space-around;
+
+    .fact {
+      width: 290px;
+      height: 130px;
+      background: rgba(250, 25, 25, 0.55);
+      display: flex;
+      align-items: stretch;
+      justify-content: space-between;
+
+      &__item {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        &.fact-desc {
+          font-family: 'GothamPro-Light';
+          text-align: left;
+          flex-direction: column;
+          align-items: flex-start;
+          margin-left: 20px;
+          h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+          }
+          p {
+            font-size: 14px;
+          }
+        }
+         & .i-checked {
+           margin-left: 20px;
+         }
+      }
+
+    }
   }
 }
 </style>
