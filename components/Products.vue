@@ -1,5 +1,5 @@
 <template lang="pug">
-.products
+.products(id="catalog")
   .section-title
     h2 Наши двери
   .content-wrapper
@@ -37,19 +37,11 @@ export default {
   width: 100vw;
   height: auto;
   background: $grey;
-  padding-top: 60px;
   position: relative;
-
-    & h2 {
-      color: $red;
-      font-size: 24px;
-      font-family: GothamPro-Light;
-      text-transform: uppercase;
-    }
 
   .content-wrapper {
     max-width: 1280px;
-    margin: 0 auto 50px;
+    margin: 0 auto 100px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;

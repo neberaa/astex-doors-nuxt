@@ -1,0 +1,22 @@
+[
+  {
+    "name": "Главная",
+    "link": "/"
+  },
+  {
+    "name": "Каталог",
+    "link": "/#catalog"
+  },
+  {
+    "name": "О нас",
+    "link": "/#about"
+  },
+  {
+    "name": "Акции",
+    "link": "/#sale"
+  },
+  {
+    "name": "Контакты",
+    "link": "/#contacts"
+  }
+]

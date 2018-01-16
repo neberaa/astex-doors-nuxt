@@ -5,18 +5,12 @@
 </template>
 
 <script>
-
+import menuItems from '~/static/data/menuItems.json'
 export default {
   name: 'navigation-component',
   data () {
     return {
-      menuItems: [
-        {name: 'Главная', link: '/'},
-        {name: 'Каталог', link: '/#catalog'},
-        {name: 'О нас', link: '/#about'},
-        {name: 'Акции', link: '/#sale'},
-        {name: 'Контакты', link: '/#contacts'}
-      ]
+      menuItems
     }
   }
 }

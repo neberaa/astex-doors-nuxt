@@ -1,5 +1,5 @@
 <template lang="pug">
-  .main-screen
+  .main-screen(id="main")
     .content-wrapper
       header.main-screen__header
         nuxt-link.logo(to="/")
