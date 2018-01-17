@@ -6,7 +6,8 @@
     advantages
     destributors
     partners
-    button.scroll-top
+    button.scroll-top(id="scroll-top")
+      .icon.i-arrow(@click="topFunction()")
 </template>
 
 <script>
@@ -25,6 +26,25 @@ export default {
     'advantages': Advantages,
     'destributors': Destributors,
     'partners': Partners
+  },
+  methods: {
+    hideScrollButton () {
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        document.getElementById('scroll-top').style.display = 'block'
+      } else {
+        document.getElementById('scroll-top').style.display = 'none'
+      }
+    },
+    topFunction () {
+      document.body.scroll({
+        top: 0,
+        behavior: 'smooth'
+      })
+      document.documentElement.scroll({
+        top: 0,
+        behavior: 'smooth'
+      })
+    }
   }
 }
 </script>
@@ -41,12 +61,25 @@ export default {
   overflow: hidden;
 
   .scroll-top {
+    outline: none;
+    display: block;
     position: fixed;
-    bottom: 30px;
-    right: 30px;
-    width: 50px;
-    height: 50px;
+    bottom: 50px;
+    right: 50px;
+    width: 95px;
+    height: 75px;
     border: none;
+    background: $red;
+    opacity: 0.7;
+    cursor: pointer;
+    z-index: 100;
+    transition: all 0.3s ease-in-out;
+    &:hover {
+      opacity: 1;
+    }
+    & .icon {
+      margin: auto;
+    }
   }
 }
 

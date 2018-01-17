@@ -1,4 +1,3 @@
-const webpack = require('webpack')
 const { resolve } = require('path')
 const sassResourcesLoader = {
   loader: 'sass-resources-loader',
@@ -65,13 +64,6 @@ module.exports = {
           rule.use.push(sassResourcesLoader)
         }
       })
-    },
-    plugins: [
-      new webpack.ProvidePlugin({
-        '$': 'jquery',
-        '_': 'lodash'
-        // ...etc.
-      })
-    ]
+    }
   }
 }

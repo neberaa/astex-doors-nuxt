@@ -1,8 +1,9 @@
 <template lang="pug">
   .partners
     .content-wrapper
-      .partner(v-for="partner in partners")
-        .icon(:class="partner.icon")
+      .carousel-wrapper
+        .partner(v-for="partner in partners")
+          .icon(:class="partner.icon")
 </template>
 
 <script>
@@ -20,14 +21,46 @@ export default {
 <style lang="scss" scoped>
 .partners {
   width: 100vw;
-  height: 100px;
+  height: 200px;
   background: $grey;
+  display: flex;
 
   & .content-wrapper {
-    max-width: 1280px;
+    max-width: 1215px;
+    width: 80%;
     margin: auto;
-    display: flex;
-  }
+    overflow: hidden;
 
+    & .carousel-wrapper {
+      width: inherit;
+      display: flex;
+      position: relative;
+      left: 0;
+
+      @keyframes carousel {
+        0% {
+          left: 0;
+        }
+        100% {
+          left: -1250px;
+        }
+      }
+      &:first-child {
+        animation: carousel 15s linear infinite;
+      }
+      & .partner {
+        .icon {
+          filter: grayscale(100%);
+          transition: all 0.3s ease-in-out;
+          &:hover {
+            transform: scale(1.1);
+            cursor: pointer;
+            filter: none;
+          }
+        }
+      }
+    }
+  }
 }
+
 </style>

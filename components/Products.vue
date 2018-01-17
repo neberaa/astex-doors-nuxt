@@ -11,11 +11,15 @@
       .footer
         p Цена: {{door.price}} грн.
         button.button.button--order Заказать
-
+    modal
 </template>
 
 <script>
+import Modal from '~/components/Modal.vue'
 export default {
+  components: {
+    'modal': Modal
+  },
   name: 'products',
   data () {
     return {

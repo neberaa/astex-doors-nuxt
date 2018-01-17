@@ -19,7 +19,7 @@
       .main-screen__title
           h1.title Металлические двери
           h4.desc Производство входных металлических дврей. Мы будем рады сотрудничеству.
-          button.button.button--about Подробнее
+          nuxt-link.button.button--about(to="/#about") Подробнее
       .main-screen__facts
         .fact(v-for="fact in facts")
           .fact__item
