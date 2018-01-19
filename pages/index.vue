@@ -1,11 +1,14 @@
 <template lang="pug">
-  section.container
+  section.container(v-if="ready")
     main-screen
     products
     sale-page
     advantages
     destributors
     partners
+    directions
+    map-component
+    footer-component
     button.scroll-top(id="scroll-top")
       .icon.i-arrow(@click="topFunction()")
 </template>
@@ -17,6 +20,9 @@ import Sale from '~/components/Sale.vue'
 import Advantages from '~/components/Advantages.vue'
 import Destributors from '~/components/Destributors.vue'
 import Partners from '~/components/Partners.vue'
+import Directions from '~/components/Directions.vue'
+import MapComponent from '~/components/MapComponent.vue'
+import FooterComponent from '~/components/FooterComponent.vue'
 
 export default {
   components: {
@@ -25,7 +31,18 @@ export default {
     'sale-page': Sale,
     'advantages': Advantages,
     'destributors': Destributors,
-    'partners': Partners
+    'partners': Partners,
+    'directions': Directions,
+    'map-component': MapComponent,
+    'footer-component': FooterComponent
+  },
+  data () {
+    return {
+      ready: false
+    }
+  },
+  mounted () {
+    this.ready = true
   },
   methods: {
     hideScrollButton () {

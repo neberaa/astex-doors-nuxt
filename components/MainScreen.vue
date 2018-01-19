@@ -179,4 +179,16 @@ export default {
     }
   }
 }
+
+// =============== Media queries ======================
+.content-wrapper {
+  @include desktop {
+    height: 100vh;
+  }
+}
+.button--about {
+  @include desktop {
+    margin: 40px auto;
+  }
+}
 </style>

@@ -3,10 +3,10 @@
   .section-title
     h2 Наши двери
   .content-wrapper
-    .products__item(v-for="door in doors")
+    .products__item(v-for="(door, index) in doors")
       h2 {{door.title}}
       .photo
-        img(:src="door.photo")
+        img(:src="doorsImages[index].photo")
       p {{door.desc}}
       .footer
         p Цена: {{door.price}} грн.
@@ -16,6 +16,7 @@
 
 <script>
 import Modal from '~/components/Modal.vue'
+import doors from '~/static/data/doors.json'
 export default {
   components: {
     'modal': Modal
@@ -23,13 +24,14 @@ export default {
   name: 'products',
   data () {
     return {
-      doors: [
-        {id: 1, title: 'Пакет "ЭКОНОМ"', desc: 'Металлическая дверь базовой комплектации: ручка-планка, один замок, металл 1,2мм, внутренняя накладка-ДСП 16мм', photo: require('../assets/img/door1.png'), price: '2200', popUp: false},
-        {id: 2, title: 'Пакет "СТАНДАРТ"', desc: 'Металлическая дверь средней комплектации: ручка-планка хром, один замок, металл 1,2мм, с накладкой МДФ 10мм', photo: require('../assets/img/door2.png'), price: '3000', popUp: false},
-        {id: 3, title: 'Пакет "КОМФОРТ"', desc: 'Металлическая дверь с двумя МДФ накладками, раздельной ручкой с броненакладкой и двумя замками', photo: require('../assets/img/door3.png'), price: '3600', popUp: false},
-        {id: 4, title: 'Пакет "ЭКОНОМ"', desc: 'Металлическая дверь базовой комплектации: ручка-планка, один замок, металл 1,2мм, внутренняя накладка-ДСП 16мм', photo: require('../assets/img/door1.png'), price: '2200', popUp: false},
-        {id: 5, title: 'Пакет "СТАНДАРТ"', desc: 'Металлическая дверь средней комплектации: ручка-планка хром, один замок, металл 1,2мм, с накладкой МДФ 10мм', photo: require('../assets/img/door2.png'), price: '3000', popUp: false},
-        {id: 6, title: 'Пакет "КОМФОРТ"', desc: 'Металлическая дверь с двумя МДФ накладками, раздельной ручкой с броненакладкой и двумя замками', photo: require('../assets/img/door3.png'), price: '3600', popUp: false}
+      doors,
+      doorsImages: [
+        {photo: require('../assets/img/door1.png')},
+        {photo: require('../assets/img/door2.png')},
+        {photo: require('../assets/img/door3.png')},
+        {photo: require('../assets/img/door1.png')},
+        {photo: require('../assets/img/door2.png')},
+        {photo: require('../assets/img/door3.png')}
       ]
     }
   }

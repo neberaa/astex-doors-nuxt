@@ -39,6 +39,7 @@ module.exports = {
   ** Customize the progress bar color
   */
   loading: { color: '#fa1212' },
+  // loading: '~/components/loading.vue',
   /*
   ** Build configuration
   */
@@ -65,5 +66,8 @@ module.exports = {
         }
       })
     }
-  }
+  },
+  plugins: [
+    '~plugins/maps.js'
+  ]
 }

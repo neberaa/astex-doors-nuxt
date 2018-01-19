@@ -51,7 +51,7 @@ export default {
     width: 80vw;
     max-width: 940px;
     height: 70vh;
-    max-height: 640px;
+    min-height: 640px;
     position: absolute;
     top: 50%;
     left: 50%;
