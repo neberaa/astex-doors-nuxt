@@ -3,15 +3,18 @@
   .section-title
     h2 Наши двери
   .content-wrapper
-    .products__item(v-for="(door, index) in doors")
-      h2 {{door.title}}
+    .products__item(v-for="(door, index) in doors" @click="itemClicked(door)")
+      h2 Пакет "{{door.title}}"
       .photo
         img(:src="doorsImages[index].photo")
       p {{door.desc}}
       .footer
         p Цена: {{door.price}} грн.
         button.button.button--order Заказать
-    modal(:item="itemClicked()")
+    transition(name="fade" mode="out-in")
+      modal(:item="item" v-if="showModal")
+  transition(name="fade" mode="out-in")
+    .overlay(v-if="showModal" @click="showModal =!showModal")
 </template>
 
 <script>
@@ -24,6 +27,8 @@ export default {
   name: 'products',
   data () {
     return {
+      showModal: false,
+      item: {},
       doors,
       doorsImages: [
         {photo: require('../assets/img/door1.png')},
@@ -37,7 +42,8 @@ export default {
   },
   methods: {
     itemClicked (item) {
-      return item
+      this.item = item
+      this.showModal = !this.showModal
     }
   }
 }
@@ -107,7 +113,26 @@ export default {
         font-family: 'GothamPro';
       }
     }
+  }
+  .overlay {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    z-index: 90;
+    background: $dark-grey;
+    opacity: .7;
+  }
+  // ======== Modal window transition ===============
+  .fade-enter-active,
+  .fade-leave-active {
+    transition: opacity 0.5s;
+  }
 
+  .fade-enter,
+  .fade-leave-to {
+    opacity: 0;
   }
 }
 

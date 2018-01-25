@@ -38,18 +38,26 @@ export default {
   },
   data () {
     return {
-      ready: false
+      ready: false,
+      scrolled: false
     }
   },
   mounted () {
     this.ready = true
   },
+  beforeMount () {
+    window.addEventListener('scroll', this.hideScrollButton)
+  },
+  beforeDestroy () {
+    window.removeEventListener('scroll', this.hideScrollButton)
+  },
   methods: {
     hideScrollButton () {
-      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-        document.getElementById('scroll-top').style.display = 'block'
+      let button = document.getElementById('scroll-top')
+      if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
+        button.style.display = 'block'
       } else {
-        document.getElementById('scroll-top').style.display = 'none'
+        button.style.display = 'none'
       }
     },
     topFunction () {
@@ -79,7 +87,7 @@ export default {
 
   .scroll-top {
     outline: none;
-    display: block;
+    display: none;
     position: fixed;
     bottom: 50px;
     right: 50px;
@@ -89,7 +97,7 @@ export default {
     background: $red;
     opacity: 0.7;
     cursor: pointer;
-    z-index: 100;
+    z-index: 80;
     transition: all 0.3s ease-in-out;
     &:hover {
       opacity: 1;
