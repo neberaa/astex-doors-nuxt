@@ -1,6 +1,6 @@
 <template lang="pug">
   .form-container
-    form(method="post" @change="formValidate()" @submit.prevent="save()")
+    form(method="post" @change="formValidate()" name="callback" netlify)
       p Заполните форму и наш менеджер свяжется с Вами в ближайшее время
       input(type="text" name="name" placeholder="Ваше имя" v-model.trim="userName" required="required" maxlength="50" tabindex="1" pattern="[^@<>]+" title="Введите свое имя")
       input(type="tel" name="email" placeholder="Ваш номер телефона" v-model="userPhone" required="required" tabindex="2" pattern="^[+]*[(]{0,1}[0-9]{1,3}[)]{0,1}[-\s\./0-9]*$" title="Введите номер телефона")
@@ -54,7 +54,7 @@ export default {
   height: 400px;
   p {
     font-family: 'GothamPro-Light';
-    font-size: 16px;
+    font-size: 1em;
     color: $white;
     padding-bottom: 20px;
   }
@@ -68,7 +68,7 @@ export default {
     color: $white;
     padding: 0 3%;
     font-family: 'GothamPro-LightItalic';
-    font-size: 14px;
+    font-size: 0.88em;
     &::placeholder {
       color: $white;
     }

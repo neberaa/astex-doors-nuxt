@@ -6,7 +6,7 @@
         | Укажите, пожалуйста, Ваш &nbsp;
         span e-mail &nbsp;
         | и наш сотрудник свяжется с Вами в ближайшее время
-      form(method="post" @change="formValidate()" @submit.prevent="save()")
+      form(method="post" @change="formValidate()" @submit.prevent="save()" name="distributors" netlify)
         input(type="email" name="email" v-model.trim="email" required="required" maxlength="50" tabindex="3" title="Введите свой email")
         button.button.button--black(type="submit" @click="formValidate(true)") Отправить заявку
 </template>
@@ -38,12 +38,12 @@ export default {
     color: $white;
 
     & h2 {
-      font-size: 36px;
+      font-size: 2.25em;
       font-family: 'GothamPro-Light';
       margin: 60px 0 40px 0;
     }
     & p {
-      font-size: 20px;
+      font-size: 1.25em;
       font-family: 'GothamPro-Light';
       margin-bottom: 60px;
       span {
@@ -56,7 +56,7 @@ export default {
         height: 47px;
         outline: none;
         color: $dark-grey;
-        font-size: 20px;
+        font-size: 1.25em;
         font-family: 'GothamPro-Light';
         padding: 0 20px;
         border: none;
@@ -64,6 +64,20 @@ export default {
       }
     }
   }
+}
 
+// =============== Media queries ======================
+@include notebook {
+  .destributors {
+    .content-wrapper {
+      max-width: 95%;
+      form {
+        & input {
+          margin-right: 20px;
+          margin-bottom: 20px;
+        }
+      }
+    }
+  }
 }
 </style>

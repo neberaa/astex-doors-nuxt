@@ -26,7 +26,7 @@ export default {
     text-transform: uppercase;
     padding-left: 20px;
     text-decoration: none;
-    font-size: 22px;
+    font-size: 1.3em;
 
   }
   .nuxt-link-exact-active {

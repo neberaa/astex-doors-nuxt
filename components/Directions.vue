@@ -49,11 +49,11 @@ export default {
   & .content-wrapper {
     max-width: 1280px;
     margin: auto;
-    padding: 50px;
+    padding: 50px 0;
   }
 
   &__title {
-    font-size: 36px;
+    font-size: 2.25em;
     color: $white;
     font-family: 'GothamPro-Light';
     font-weight: 300;
@@ -93,9 +93,15 @@ export default {
           transform: rotateY(0deg);
           .image-container {
             height: 400px;
+
+            img {
+              width: 85%;
+              height: auto;
+              margin: auto;
+            }
           }
           p {
-            font-size: 24px;
+            font-size: 1.5em;
             color: $white;
             font-family: 'GothamPro-Light';
             font-weight: 300;
@@ -112,7 +118,7 @@ export default {
             padding: 20px 10px;
             color: $red;
             font-family: 'GothamPro';
-            font-size: 24px;
+            font-size: 1.5em;
             border-bottom: 1px solid $red;
           }
           .icon {

@@ -2,24 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b14e2736-76de-47d0-8ed2-f6cd2e61c3e1" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/assets/scss/media.scss" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/components/Directions.vue" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/components/FooterComponent.vue" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/components/MapComponent.vue" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/components/loading.vue" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/plugins/maps.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/data/contacts.json" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/data/directions.json" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/assets/img/directions-bg.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/assets/scss/sprite.scss" afterPath="$PROJECT_DIR$/assets/scss/sprite.scss" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/global.scss" afterPath="$PROJECT_DIR$/assets/scss/global.scss" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/media.scss" afterPath="$PROJECT_DIR$/assets/scss/media.scss" />
+      <change beforePath="$PROJECT_DIR$/components/Advantages.vue" afterPath="$PROJECT_DIR$/components/Advantages.vue" />
+      <change beforePath="$PROJECT_DIR$/components/Destributors.vue" afterPath="$PROJECT_DIR$/components/Destributors.vue" />
+      <change beforePath="$PROJECT_DIR$/components/Directions.vue" afterPath="$PROJECT_DIR$/components/Directions.vue" />
+      <change beforePath="$PROJECT_DIR$/components/FooterComponent.vue" afterPath="$PROJECT_DIR$/components/FooterComponent.vue" />
+      <change beforePath="$PROJECT_DIR$/components/FormComponent.vue" afterPath="$PROJECT_DIR$/components/FormComponent.vue" />
       <change beforePath="$PROJECT_DIR$/components/MainScreen.vue" afterPath="$PROJECT_DIR$/components/MainScreen.vue" />
+      <change beforePath="$PROJECT_DIR$/components/MapComponent.vue" afterPath="$PROJECT_DIR$/components/MapComponent.vue" />
+      <change beforePath="$PROJECT_DIR$/components/Modal.vue" afterPath="$PROJECT_DIR$/components/Modal.vue" />
+      <change beforePath="$PROJECT_DIR$/components/Navigation.vue" afterPath="$PROJECT_DIR$/components/Navigation.vue" />
       <change beforePath="$PROJECT_DIR$/components/Products.vue" afterPath="$PROJECT_DIR$/components/Products.vue" />
       <change beforePath="$PROJECT_DIR$/components/Sale.vue" afterPath="$PROJECT_DIR$/components/Sale.vue" />
-      <change beforePath="$PROJECT_DIR$/nuxt.config.js" afterPath="$PROJECT_DIR$/nuxt.config.js" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" afterPath="$PROJECT_DIR$/package-lock.json" />
-      <change beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
-      <change beforePath="$PROJECT_DIR$/pages/index.vue" afterPath="$PROJECT_DIR$/pages/index.vue" />
+      <change beforePath="$PROJECT_DIR$/layouts/default.vue" afterPath="$PROJECT_DIR$/layouts/default.vue" />
       <change beforePath="$PROJECT_DIR$/static/data/doors.json" afterPath="$PROJECT_DIR$/static/data/doors.json" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -43,63 +39,11 @@
     <splitter split-orientation="horizontal" split-proportion="0.5">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="MapComponent.vue" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/components/MapComponent.vue">
+          <file leaf-file-name="Products.vue" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/components/Products.vue">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="575">
-                  <caret line="25" column="27" lean-forward="true" selection-start-line="25" selection-start-column="27" selection-end-line="25" selection-end-column="27" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="FooterComponent.vue" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/components/FooterComponent.vue">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="418">
-                  <caret line="75" column="27" lean-forward="true" selection-start-line="75" selection-start-column="27" selection-end-line="75" selection-end-column="27" />
-                  <folding>
-                    <element signature="e#413#465#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="Sale.vue" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/components/Sale.vue">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1127">
-                  <caret line="49" column="10" lean-forward="false" selection-start-line="49" selection-start-column="10" selection-end-line="49" selection-end-column="10" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="contacts.json" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/static/data/contacts.json">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="391">
-                  <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="MainScreen.vue" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/components/MainScreen.vue">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1725">
-                  <caret line="75" column="13" lean-forward="false" selection-start-line="75" selection-start-column="13" selection-end-line="75" selection-end-column="13" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="Directions.vue" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/components/Directions.vue">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1771">
-                  <caret line="77" column="18" lean-forward="false" selection-start-line="77" selection-start-column="18" selection-end-line="77" selection-end-column="18" />
+                <state relative-caret-position="671">
+                  <caret line="121" column="19" lean-forward="false" selection-start-line="121" selection-start-column="19" selection-end-line="121" selection-end-column="19" />
                   <folding />
                 </state>
               </provider>
@@ -108,41 +52,29 @@
           <file leaf-file-name="Modal.vue" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/components/Modal.vue">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="667">
-                  <caret line="29" column="9" lean-forward="false" selection-start-line="29" selection-start-column="9" selection-end-line="29" selection-end-column="9" />
+                <state relative-caret-position="368">
+                  <caret line="16" column="34" lean-forward="false" selection-start-line="16" selection-start-column="34" selection-end-line="16" selection-end-column="34" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="Navigation.vue" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/components/Navigation.vue">
+          <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/.gitignore">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="506">
-                  <caret line="22" column="28" lean-forward="false" selection-start-line="22" selection-start-column="28" selection-end-line="22" selection-end-column="28" />
+                <state relative-caret-position="276">
+                  <caret line="12" column="5" lean-forward="true" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="nuxt.config.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/nuxt.config.js">
+          <file leaf-file-name="Directions.vue" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/components/Directions.vue">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1587">
-                  <caret line="69" column="12" lean-forward="false" selection-start-line="69" selection-start-column="12" selection-end-line="69" selection-end-column="12" />
+                <state relative-caret-position="1288">
+                  <caret line="56" column="18" lean-forward="false" selection-start-line="56" selection-start-column="18" selection-end-line="56" selection-end-column="18" />
                   <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="index.vue" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/pages/index.vue">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="207">
-                  <caret line="9" column="17" lean-forward="false" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
-                  <folding>
-                    <element signature="e#303#355#0" expanded="true" />
-                  </folding>
                 </state>
               </provider>
             </entry>
@@ -151,11 +83,21 @@
       </split-first>
       <split-second>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="global.scss" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/assets/scss/global.scss">
+          <file leaf-file-name="sprite.scss" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/assets/scss/sprite.scss">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="874">
-                  <caret line="38" column="22" lean-forward="true" selection-start-line="38" selection-start-column="22" selection-end-line="38" selection-end-column="22" />
+                <state relative-caret-position="575">
+                  <caret line="25" column="27" lean-forward="false" selection-start-line="25" selection-start-column="27" selection-end-line="25" selection-end-column="27" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="colors.scss" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/assets/scss/colors.scss">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="115">
+                  <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
@@ -171,21 +113,21 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="sprite.scss" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/assets/scss/sprite.scss">
+          <file leaf-file-name="media.scss" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/assets/scss/media.scss">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="0">
-                  <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+                <state relative-caret-position="394">
+                  <caret line="19" column="17" lean-forward="false" selection-start-line="19" selection-start-column="17" selection-end-line="19" selection-end-column="17" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="colors.scss" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/assets/scss/colors.scss">
+          <file leaf-file-name="global.scss" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/assets/scss/global.scss">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="115">
-                  <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+                <state relative-caret-position="184">
+                  <caret line="8" column="20" lean-forward="false" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="20" />
                   <folding />
                 </state>
               </provider>
@@ -290,6 +232,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -305,26 +249,12 @@
             <path>
               <item name="astex-doors" type="b2602c69:ProjectViewProjectNode" />
               <item name="astex-doors" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-              <item name="scss" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="astex-doors" type="b2602c69:ProjectViewProjectNode" />
-              <item name="astex-doors" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="astex-doors" type="b2602c69:ProjectViewProjectNode" />
-              <item name="astex-doors" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="data" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -388,7 +318,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="79443000" />
+    <option name="totallyTimeSpent" value="79456000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -596,8 +526,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="13" column="0" lean-forward="true" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+        <state relative-caret-position="276">
+          <caret line="12" column="5" lean-forward="true" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -611,8 +542,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/scss/media.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="18" column="1" lean-forward="false" selection-start-line="18" selection-start-column="1" selection-end-line="18" selection-end-column="1" />
+        <state relative-caret-position="394">
+          <caret line="19" column="17" lean-forward="false" selection-start-line="19" selection-start-column="17" selection-end-line="19" selection-end-column="17" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -642,8 +574,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/components/Products.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="920">
-          <caret line="40" column="26" lean-forward="true" selection-start-line="40" selection-start-column="26" selection-end-line="40" selection-end-column="26" />
+        <state relative-caret-position="671">
+          <caret line="121" column="19" lean-forward="false" selection-start-line="121" selection-start-column="19" selection-end-line="121" selection-end-column="19" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -670,8 +603,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/components/Modal.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="667">
-          <caret line="29" column="9" lean-forward="false" selection-start-line="29" selection-start-column="9" selection-end-line="29" selection-end-column="9" />
+        <state relative-caret-position="368">
+          <caret line="16" column="34" lean-forward="false" selection-start-line="16" selection-start-column="34" selection-end-line="16" selection-end-column="34" />
           <folding />
         </state>
       </provider>
@@ -688,7 +621,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1587">
           <caret line="69" column="12" lean-forward="false" selection-start-line="69" selection-start-column="12" selection-end-line="69" selection-end-column="12" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -716,8 +648,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/components/Directions.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1771">
-          <caret line="77" column="18" lean-forward="false" selection-start-line="77" selection-start-column="18" selection-end-line="77" selection-end-column="18" />
+        <state relative-caret-position="1288">
+          <caret line="56" column="18" lean-forward="false" selection-start-line="56" selection-start-column="18" selection-end-line="56" selection-end-column="18" />
           <folding />
         </state>
       </provider>
@@ -741,7 +673,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
           <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -771,16 +702,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/scss/sprite.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="575">
+          <caret line="25" column="27" lean-forward="false" selection-start-line="25" selection-start-column="27" selection-end-line="25" selection-end-column="27" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/scss/global.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="874">
-          <caret line="38" column="22" lean-forward="true" selection-start-line="38" selection-start-column="22" selection-end-line="38" selection-end-column="22" />
+        <state relative-caret-position="184">
+          <caret line="8" column="20" lean-forward="false" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="20" />
           <folding />
         </state>
       </provider>
@@ -789,7 +720,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="575">
           <caret line="25" column="27" lean-forward="true" selection-start-line="25" selection-start-column="27" selection-end-line="25" selection-end-column="27" />
-          <folding />
         </state>
       </provider>
     </entry>

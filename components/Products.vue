@@ -11,7 +11,7 @@
       .footer
         p Цена: {{door.price}} грн.
         button.button.button--order Заказать
-    modal
+    modal(:item="itemClicked()")
 </template>
 
 <script>
@@ -34,6 +34,11 @@ export default {
         {photo: require('../assets/img/door3.png')}
       ]
     }
+  },
+  methods: {
+    itemClicked (item) {
+      return item
+    }
   }
 }
 </script>
@@ -46,11 +51,11 @@ export default {
   position: relative;
 
   .content-wrapper {
-    max-width: 1280px;
+    max-width: 1200px;
     margin: 0 auto 100px;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-evenly;
   }
 
   &__item {
@@ -58,7 +63,6 @@ export default {
     max-height: 650px;
     background-color:  rgba(255, 255, 255, 0.46);
     box-shadow: 3px 5px 7px 0px rgba(70, 70, 71, 0.75);
-    margin-right: 30px;
     margin-top: 80px;
     display: flex;
     flex-direction: column;
@@ -72,7 +76,7 @@ export default {
 
     & h2 {
       color: $dark-grey;
-      font-size: 18px;
+      font-size: 1.13em;
       padding-top: 20px;
       font-family: 'GothamPro';
     }
@@ -82,6 +86,11 @@ export default {
       color: $dark-grey;
       text-align: center;
       padding: 15px;
+    }
+
+    img {
+      width: 90%;
+      height: auto;
     }
 
     & .footer {
@@ -94,12 +103,24 @@ export default {
 
       & p {
         color: $white;
-        font-size: 18px;
+        font-size: 1.13em;
         font-family: 'GothamPro';
       }
     }
 
   }
+}
 
+// =============== Media queries ======================
+@include notebook {
+  .products {
+    min-height: 800px;
+    .content-wrapper {
+      min-height: 760px;
+    }
+    &__item {
+      width: 300px;
+    }
+  }
 }
 </style>

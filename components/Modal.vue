@@ -3,20 +3,41 @@
     .modal-dialog
       .modal-content
         .modal__header
-
+          h3.modal-title {{item.title}}
+          button.button--close(type="button" data-dismiss="modal" aria-label="Close")
+            span.i-multiply(aria-hidden="true")
         .modal__body
-        .modal__footer
+          .column
+            // slider
+          form.column(method="post" @change="formValidate()" name="order" netlify)
+            .row.main-info
+              .column
+                .item(v-for="modal in item.modal")
+                  .icon(:class="modal.icon")
+                  p {{modal.text}}
+              .column
+                .icon.i-truck_grey
+                .icon.i-wallet_grey
+            .row.dropdown
+              label(for="select1") Дверная коробка
+              select(id="select1" name="select1")
+                option(value="850x2040" selected) 850x2040
+                option(value="850x2040") 960x2040
+              label(for="select2") Открывание
+              select(id="select2" name="select2")
+                option(value="левая") левая
+                option(value="правая" selected) правая
+            .row.footer
+              p Цена: {{item.price}} грн.
+              button.button.button--order(type="submit" @click="formValidate(true)") Заказать
 </template>
 
 <script>
+import FormComponent from '~/components/FormComponent.vue'
 export default {
+  mixins: [FormComponent],
   props: {
-    title: {
-      require: true,
-      type: String,
-      default: ''
-    },
-    desc: {
+    item: {
       require: true,
       type: String,
       default: ''
@@ -30,49 +51,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.advantages {
-  width: 100vw;
-  height: 100vh;
+.modal {
+  display: none;
+  width: 400px;
+  height: 200px;
   background: $grey;
-
-  & .content-wrapper {
-    max-width: 1280px;
-    margin: 0 auto 100px;
-    display: flex;
-    justify-content: space-around;
-
-    & .column {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-evenly;
-
-      & .item {
-        max-width: 300px;
-        color: $dark-grey;
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
-        & .column {
-          display: flex;
-          margin-left: 20px;
-          & h3 {
-            font-size: 20px;
-            text-align: left;
-            margin-bottom: 10px;
-          }
-          & p {
-            text-align: left;
-            max-width: 200px;
-          }
-        }
-      }
-      & img {
-        width: 90%;
-        height: 100%;
-      }
-    }
-
-  }
-
 }
 </style>

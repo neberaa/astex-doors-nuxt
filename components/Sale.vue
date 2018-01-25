@@ -60,7 +60,7 @@ export default {
     border: 3px solid $white;
 
     .title {
-      font-size: 40px;
+      font-size: 2.5em;
       text-transform: uppercase;
       color: $white;
       font-family: 'GothamPro-Bold';
@@ -72,7 +72,7 @@ export default {
     }
 
     .desc {
-      font-size: 24px;
+      font-size: 1.5em;
       color: $white;
       font-family: 'GothamPro-Light';
       & span {
@@ -87,12 +87,17 @@ export default {
       justify-content: space-around;
       align-items: center;
 
+      img {
+        width: 110%;
+        height: auto;
+      }
+
       & .counter p {
         padding: 40px 0 80px;
       }
 
       & .price p {
-        font-size: 24px;
+        font-size: 1.5em;
         color: $white;
         font-family: 'GothamPro-Light';
         position: relative;
@@ -114,7 +119,16 @@ export default {
     }
 
   }
-
-
+}
+// =============== Media queries ================
+@include notebook {
+  .sale {
+    min-height: 700px;
+    &__box {
+      width: 80%;
+      max-width: 900px;
+      height: 80%;
+    }
+  }
 }
 </style>

@@ -38,7 +38,7 @@ export default {
     justify-content: space-around;
 
     & h3 {
-      font-size: 24px;
+      font-size: 1.5em;
       font-weight: 300;
       font-family: 'GothamPro';
       color: $white;

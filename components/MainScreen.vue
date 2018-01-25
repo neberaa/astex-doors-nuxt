@@ -23,7 +23,7 @@
       .main-screen__facts
         .fact(v-for="fact in facts")
           .fact__item
-            .i-checked
+            .icon.i-checked
           .fact__item.fact-desc
             h3 {{fact.title}}
             p {{fact.text}}
@@ -64,6 +64,7 @@ export default {
     width: 80vw;
     max-width: 1280px;
     height: 90vh;
+    min-height: 780px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -103,7 +104,7 @@ export default {
               padding: 0;
               margin: 0;
               .phone__text {
-                font-size: 19px;
+                font-size: 1.25em;
               }
               .callback {
                 color: $red;
@@ -128,12 +129,12 @@ export default {
     justify-content: center;
     align-items: flex-start;
     & .title {
-      font-size: 48px;
+      font-size: 3em;
       font-family: 'GothamPro-Bold';
       text-transform: uppercase;
     }
     & .desc {
-      font-size: 24px;
+      font-size: 1.5em;
       font-family: 'GothamPro-Light';
     }
     .button--about {
@@ -164,11 +165,11 @@ export default {
           align-items: flex-start;
           margin-left: 20px;
           h3 {
-            font-size: 20px;
+            font-size: 1.25em;
             margin-bottom: 10px;
           }
           p {
-            font-size: 14px;
+            font-size: 0.88em;
           }
         }
          & .i-checked {
@@ -181,14 +182,17 @@ export default {
 }
 
 // =============== Media queries ======================
-.content-wrapper {
-  @include desktop {
-    height: 100vh;
-  }
-}
-.button--about {
-  @include desktop {
-    margin: 40px auto;
+@include notebook {
+  .main-screen {
+    min-height: 800px;
+    .content-wrapper {
+      min-height: 760px;
+    }
+    &__facts {
+      & .fact {
+        width: 250px;
+      }
+    }
   }
 }
 </style>

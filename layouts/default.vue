@@ -4,7 +4,7 @@
   </div>
 </template>
 
-<style>
+<style lang="scss">
   html {
     font-family: 'GothamPro', Arial, sans-serif;
     font-size: 16px;
@@ -19,5 +19,11 @@
   *, *:before, *:after {
     box-sizing: border-box;
     margin: 0;
+  }
+
+  @include notebook {
+      html {
+        font-size: 14px;
+      }
   }
 </style>

@@ -1,11 +1,11 @@
 <template lang="pug">
   .advantages(id="about")
-    .section-title
+    .section-title.long
       h2 Наши преимущества
     .content-wrapper
       .column
         .item(v-for="item in advantages.left")
-          div(:class="item.iconClass")
+          div.icon(:class="item.iconClass")
           .column
             h3 {{item.title}}
             p {{item.text}}
@@ -13,7 +13,7 @@
         img(src="~/assets/img/door-main.png")
       .column
         .item(v-for="item in advantages.right")
-          div(:class="item.iconClass")
+          div.icon(:class="item.iconClass")
           .column
             h3 {{item.title}}
             p {{item.text}}
@@ -40,7 +40,9 @@ export default {
 
   & .content-wrapper {
     max-width: 1280px;
-    margin: 0 auto 100px;
+    width: 90%;
+    height: 90%;
+    margin: 0 auto 80px;
     display: flex;
     justify-content: space-around;
 
@@ -59,7 +61,7 @@ export default {
           display: flex;
           margin-left: 20px;
           & h3 {
-            font-size: 20px;
+            font-size: 1.15em;
             text-align: left;
             margin-bottom: 10px;
           }
@@ -70,12 +72,40 @@ export default {
         }
       }
       & img {
-        width: 90%;
-        height: 100%;
+        width: 85%;
+        height: auto;
+        margin: auto;
       }
     }
 
   }
+}
 
+// =============== Media queries ================
+@include notebook {
+  .advantages {
+    min-height: 700px;
+    .content-wrapper {
+      width: 80%;
+      height: 80%;
+      & .column {
+        & img {
+          width: 70%;
+          height: auto;
+          margin: auto;
+        }
+        & .item {
+          flex-direction: column;
+          align-items: center;
+          margin-bottom: 30px;
+          .column {
+            h3, p {
+              text-align: center;
+            }
+          }
+        }
+      }
+    }
+  }
 }
 </style>

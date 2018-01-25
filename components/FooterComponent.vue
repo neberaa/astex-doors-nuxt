@@ -77,14 +77,14 @@ export default {
       }
       & span {
         color: $white;
-        font-size: 18px;
+        font-size: 1.13em;
         font-weight: 300;
         font-family: 'GothamPro-Light';
       }
     }
     h2 {
       color: $red;
-      font-size: 24px;
+      font-size: 1.5em;
       margin-bottom: 40px;
     }
   }
