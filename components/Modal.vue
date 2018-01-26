@@ -13,7 +13,7 @@
               p {{modal.text}}
           .column
             .icon-box
-              .icon.i-truck_grey(data-tooltip='Только у нас - бесплатная доставка')
+              .icon.i-truck_grey(data-tooltip='Бесплатная доставка')
             .icon-box
               .icon.i-wallet_grey(data-tooltip='Лучшая цена на модель')
         form.form-content.flex-item(method="post" @change="formValidate()" name="order" netlify)

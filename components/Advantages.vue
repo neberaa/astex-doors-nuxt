@@ -72,8 +72,8 @@ export default {
         }
       }
       & img {
-        width: 85%;
-        height: auto;
+        width: auto;
+        height: 100%;
         margin: auto;
       }
     }

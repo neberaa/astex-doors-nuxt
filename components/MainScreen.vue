@@ -45,6 +45,18 @@ export default {
         {title: 'Гарантия качества', text: 'Производство входных металлических дврей. Мы будем рады сотрудничеству.'}
       ]
     }
+  },
+  mounted () {
+    this.onResize()
+  },
+  methods: {
+    onResize () {
+      let width = document.documentElement.clientWidth
+      if (width < 960) {
+        let contacts = document.querySelector('.contacts')
+        contacts.style.display = 'none'
+      }
+    }
   }
 }
 </script>

@@ -1,22 +1,27 @@
 [
   {
     "name": "Главная",
-    "link": "/"
+    "link": "/",
+    "nameId": "main"
   },
   {
     "name": "Каталог",
-    "link": "/#catalog"
+    "link": "/#catalog",
+    "nameId": "catalog"
   },
   {
     "name": "О нас",
-    "link": "/#about"
+    "link": "/#about",
+    "nameId": "about"
   },
   {
     "name": "Акции",
-    "link": "/#sale"
+    "link": "/#sale",
+    "nameId": "sale"
   },
   {
     "name": "Контакты",
-    "link": "/#contacts"
+    "link": "/#contacts",
+    "nameId": "contacts"
   }
 ]

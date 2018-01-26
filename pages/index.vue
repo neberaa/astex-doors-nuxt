@@ -38,8 +38,7 @@ export default {
   },
   data () {
     return {
-      ready: false,
-      scrolled: false
+      ready: false
     }
   },
   mounted () {
