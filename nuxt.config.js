@@ -16,7 +16,6 @@ function isSASSRule (rule) {
   return ['/\\.sass$/', '/\\.scss$/'].indexOf(rule.test.toString()) !== -1
 }
 
-
 module.exports = {
   /*
   ** Headers of the page

@@ -1,32 +1,35 @@
 <template lang="pug">
   .main-screen(id="main")
-    .content-wrapper
-      header.main-screen__header
-        nuxt-link.logo(to="/")
-        .navigation-container
-          .row.contacts
-            .row-item.e-mail
-              .icon.i-envelope
-              span.e-mail__text info@astex-group.com.ua
-            .row-item.phone
-              .icon.i-phone
-              ul
-                li.phone__text +38(057) 725 29 95
-                li.callback
-                  a перезвоните мне!
-          .row.navigation
-            navigation-component
-      .main-screen__title
-          h1.title Металлические двери
-          h4.desc Производство входных металлических дврей. Мы будем рады сотрудничеству.
-          nuxt-link.button.button--about(to="/#about") Подробнее
-      .main-screen__facts
-        .fact(v-for="fact in facts")
-          .fact__item
-            .icon.i-checked
-          .fact__item.fact-desc
-            h3 {{fact.title}}
-            p {{fact.text}}
+    transition(appear name="fade")
+      .content-wrapper
+        header.main-screen__header
+          nuxt-link.logo(to="/")
+          .navigation-container
+            .row.contacts
+              .row-item.e-mail
+                .icon.i-envelope
+                span.e-mail__text info@astex-group.com.ua
+              .row-item.phone
+                .icon.i-phone
+                ul
+                  li.phone__text +38(057) 725 29 95
+                  li.callback
+                    a перезвоните мне!
+            .row.navigation
+              navigation-component
+        .main-screen__title
+            h1.title Металлические двери
+            h4.desc Производство входных металлических дверей. Мы будем рады сотрудничеству.
+            nuxt-link.button.button--about(to="/about" v-if="$route.path === '/'") Подробнее
+        .scroll(v-if="$route.path !== '/'")
+            a.scroll__button( @click.prevent="scrollToSection")
+        .main-screen__facts
+          .fact(v-for="fact in facts")
+            .fact__item
+              .icon.i-checked
+            .fact__item.fact-desc
+              h3 {{fact.title}}
+              p {{fact.text}}
 </template>
 
 <script>
@@ -40,14 +43,19 @@ export default {
   data () {
     return {
       facts: [
-        {title: 'Доступность', text: 'Производство входных металлических дврей. Мы будем рады сотрудничеству.'},
-        {title: 'Надежность', text: 'Производство входных металлических дврей. Мы будем рады сотрудничеству.'},
-        {title: 'Гарантия качества', text: 'Производство входных металлических дврей. Мы будем рады сотрудничеству.'}
+        {title: 'Доступность', text: 'Производство входных металлических дверей. Мы будем рады сотрудничеству.'},
+        {title: 'Надежность', text: 'Производство входных металлических дверей. Мы будем рады сотрудничеству.'},
+        {title: 'Гарантия качества', text: 'Производство входных металлических дверей. Мы будем рады сотрудничеству.'}
       ]
     }
   },
   mounted () {
     this.onResize()
+    window.scrollTo({
+      left: 0,
+      top: document.getElementById('main').scrollHeight,
+      behavior: 'smooth'
+    })
   },
   methods: {
     onResize () {
@@ -56,6 +64,13 @@ export default {
         let contacts = document.querySelector('.contacts')
         contacts.style.display = 'none'
       }
+    },
+    scrollToSection () {
+      window.scrollTo({
+        left: 0,
+        top: document.getElementById('main').scrollHeight,
+        behavior: 'smooth'
+      })
     }
   }
 }
@@ -154,6 +169,64 @@ export default {
     }
   }
 
+  & .scroll {
+    position: relative;
+    margin: 0 auto;
+    width: 100px;
+    height: 80px;
+    &__button,
+    &__button:before {
+      position: absolute;
+      left: 50%;
+      cursor: pointer;
+    }
+    &__button {
+      width: 40px;
+      height: 70px;
+      margin-left: -20px;
+      top: 50%;
+      margin-top: -35px;
+      -webkit-box-shadow: inset 0 0 0 1px #fff;
+      box-shadow: inset 0 0 0 1px #fff;
+      border-radius: 25px;
+    }
+    &__button:before {
+      content: '';
+      width: 8px;
+      height: 8px;
+      background: #fff;
+      margin-left: -4px;
+      top: 8px;
+      border-radius: 4px;
+      -webkit-animation-duration: 1.5s;
+      animation-duration: 1.5s;
+      -webkit-animation-iteration-count: infinite;
+      animation-iteration-count: infinite;
+      -webkit-animation-name: scroll;
+      animation-name: scroll;
+    }
+    @-webkit-keyframes scroll {
+      0% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0;
+        -webkit-transform: translateY(46px);
+        transform: translateY(46px);
+      }
+    }
+    @keyframes scroll {
+      0% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0;
+        -webkit-transform: translateY(46px);
+        transform: translateY(46px);
+      }
+    }
+  }
+
   &__facts {
     display: flex;
     justify-content: space-around;
@@ -191,6 +264,16 @@ export default {
 
     }
   }
+}
+// ======== Transition ===============
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 1.5s ease-in-out;
+}
+
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
 }
 
 // =============== Media queries ======================

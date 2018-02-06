@@ -1,7 +1,7 @@
 <template lang="pug">
   nav.navigation(id="navigation")
     .navigation__item(v-for="item in menuItems" v-if="!smallScreen")
-      nuxt-link.navigation__link(:to="item.link" v-bind:class="{'nuxt-link-exact-active': item.nameId === scrollState}") {{item.name}}
+      nuxt-link.navigation__link(:to="item.link" ) {{item.name}}
     .burger(v-if="smallScreen")
       .icon X
       .menu-list
@@ -25,7 +25,7 @@ export default {
     window.addEventListener('scroll', this.transformMenu)
   },
   beforeDestroy () {
-    window.removeEventListener('scroll', this.transformMenu, this.setActiveLink())
+    window.removeEventListener('scroll', this.transformMenu)
   },
   mounted () {
     this.onResize()
@@ -46,25 +46,6 @@ export default {
       } else {
         nav.classList.remove('scrolled')
       }
-    },
-    // removeActiveClass () {
-    //   let els = document.querySelectorAll('.nuxt-link-exact-active')
-    //   for (let i = 0; i < els.length; i++) {
-    //     els[i].classList.remove('nuxt-link-exact-active')
-    //   }
-    // },
-    setActiveLink () {
-      // let main = document.getElementById('main').getBoundingClientRect().top
-      // let catalog = document.getElementById('catalog').getBoundingClientRect().top
-      // let aboutTop = document.getElementById('about').getBoundingClientRect().top
-      // let aboutBottom = document.getElementById('about').getBoundingClientRect().bottom
-      // let sale = document.getElementById('sale').getBoundingClientRect().top
-      // console.log(parseInt(aboutTop, 10), parseInt(aboutTop, 10) === 0)
-      // if (parseInt(aboutTop, 10) === 0) {
-      //   console.log('!!!!!!!!!!')
-      //   this.removeActiveClass()
-      //   this.scrollState = 'about'
-      // }
     }
   }
 
@@ -90,12 +71,18 @@ export default {
     display: flex;
     position: fixed;
     justify-content: center;
-    background: rgba(51, 52, 54, .7);
+    background: $dark-grey;
     z-index: 90;
     top: 0;
     left: 0;
     right: 0;
-    height: 70px;
+    height: 30px;
+    opacity: 0.5;
+    transition: all 0.3s ease-in-out;
+    &:hover {
+      height: 70px;
+      opacity: 1;
+    }
   }
   .burger {
     .menu-list {
