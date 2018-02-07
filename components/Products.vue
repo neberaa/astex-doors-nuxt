@@ -12,7 +12,7 @@
         p Цена: {{door.price}} грн.
         button.button.button--order Заказать
     transition(name="fade" mode="out-in")
-      modal(:item="item" v-if="showModal")
+      modal(:item="item" v-on:show:modal="modalVisible" v-bind:photos="doorsImages" v-if="showModal")
   transition(name="fade" mode="out-in")
     .overlay(v-if="showModal" @click="showModal =!showModal")
 </template>
@@ -20,6 +20,7 @@
 <script>
 import Modal from '~/components/Modal.vue'
 import doors from '~/static/data/doors.json'
+
 export default {
   components: {
     'modal': Modal
@@ -44,6 +45,9 @@ export default {
     itemClicked (item) {
       this.item = item
       this.showModal = !this.showModal
+    },
+    modalVisible (e) {
+      this.showModal = e
     }
   }
 }

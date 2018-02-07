@@ -6,7 +6,7 @@
         | Укажите, пожалуйста, Ваш &nbsp;
         span e-mail &nbsp;
         | и наш сотрудник свяжется с Вами в ближайшее время
-      form(method="post" @change="formValidate()" @submit.prevent="save()" name="distributors" netlify)
+      form(method="post" @change="formValidate()" name="distributors" data-netlify="true")
         input(type="email" name="email" v-model.trim="email" required="required" maxlength="50" tabindex="3" title="Введите свой email")
         button.button.button--black(type="submit" @click="formValidate(true)") Отправить заявку
 </template>

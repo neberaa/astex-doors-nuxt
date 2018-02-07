@@ -91,10 +91,9 @@ export default {
     width: 80vw;
     max-width: 1280px;
     height: 90vh;
-    min-height: 780px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start;
   }
 
   &__header {
@@ -155,6 +154,7 @@ export default {
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
+    margin-top: 100px;
     & .title {
       font-size: 3em;
       font-family: 'GothamPro-Bold';
@@ -171,7 +171,7 @@ export default {
 
   & .scroll {
     position: relative;
-    margin: 0 auto;
+    margin: 60px auto;
     width: 100px;
     height: 80px;
     &__button,

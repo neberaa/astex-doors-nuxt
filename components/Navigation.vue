@@ -71,17 +71,18 @@ export default {
     display: flex;
     position: fixed;
     justify-content: center;
-    background: $dark-grey;
+    background: $white;
+    box-shadow: 3px 5px 7px 0px rgba(70, 70, 71, .75);
     z-index: 90;
     top: 0;
     left: 0;
     right: 0;
-    height: 30px;
-    opacity: 0.5;
-    transition: all 0.3s ease-in-out;
-    &:hover {
-      height: 70px;
-      opacity: 1;
+    height: 70px;
+    & .navigation__link {
+      color: $dark-grey;
+    }
+    & .nuxt-link-exact-active {
+      color: $red;
     }
   }
   .burger {

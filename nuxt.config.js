@@ -31,7 +31,13 @@ module.exports = {
       { hid: 'description', name: 'description', content: 'astex doors' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'stylesheet', href: 'https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css' },
+      { rel: 'stylesheet', href: 'https://unpkg.com/flickity@2/dist/flickity.css' }
+    ],
+    script: [
+      {src: 'https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js'},
+      {src: 'https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js'}
     ]
   },
   /*

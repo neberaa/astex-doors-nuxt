@@ -1,6 +1,6 @@
 <template lang="pug">
   .form-container
-    form(method="post" @change="formValidate()" name="callback" netlify)
+    form(method="post" @change="formValidate()" name="form" data-netlify="true")
       p Заполните форму и наш менеджер свяжется с Вами в ближайшее время
       input(type="text" name="name" placeholder="Ваше имя" v-model.trim="userName" required="required" maxlength="50" tabindex="1" pattern="[^@<>]+" title="Введите свое имя")
       input(type="tel" name="email" placeholder="Ваш номер телефона" v-model="userPhone" required="required" tabindex="2" pattern="^[+]*[(]{0,1}[0-9]{1,3}[)]{0,1}[-\s\./0-9]*$" title="Введите номер телефона")
@@ -8,7 +8,6 @@
 </template>
 
 <script>
-import axios from 'axios'
 export default {
   name: 'form',
   data () {
@@ -35,13 +34,6 @@ export default {
       })
       valid.forEach(function (item) {
         item.className = 'valid'
-      })
-    },
-    save () {
-      axios.post(' ', {
-        title: 'Заявка на покупку дверей',
-        user_name: this.userName,
-        user_phone: this.userPhone
       })
     }
   }

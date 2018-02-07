@@ -2,10 +2,19 @@
   .modal
     .modal-content
       .column.slider
+        .carousel
+          .carousel-item.main(v-for="item in photos")
+            img(:src="item.photo")
+        .carousel.thumbs
+          .icon.i-arrow_grey.prev
+          .thumbnail-container
+            .carousel-item.thumbnail(v-for="item in photos")
+              img(:src="item.photo")
+          .icon.i-arrow_grey.next
       .column.main
         header.header.flex-item
           h3.modal-title Пакет "{{item.title}}"
-          .icon.i-multiply
+          .icon.i-multiply(@click="emitBool")
         section.main-info.flex-item
           .column
             .item(v-for="modal in item.modal")
@@ -16,7 +25,7 @@
               .icon.i-truck_grey(data-tooltip='Бесплатная доставка')
             .icon-box
               .icon.i-wallet_grey(data-tooltip='Лучшая цена на модель')
-        form.form-content.flex-item(method="post" @change="formValidate()" name="order" netlify)
+        form.form-content.flex-item(method="post" @change="formValidate()" name="order" data-netlify="true")
           label(for="select1") Дверная коробка
           select(id="select1" name="select1")
             option(value="850x2040" selected) 850x2040
@@ -36,10 +45,17 @@ export default {
   name: 'modal',
   mixins: [FormComponent],
   props: {
-    item: {}
+    item: {},
+    show: {},
+    photos: {}
   },
   data () {
     return {
+    }
+  },
+  methods: {
+    emitBool () {
+      this.$emit('show:modal', false)
     }
   }
 }
@@ -69,6 +85,49 @@ export default {
       &.slider {
         width: 33%;
         border-right: 2px solid $grey;
+
+        .carousel {
+          overflow: hidden;
+          display: flex;
+          height: 75%;
+          flex-direction: column;
+          &.thumbs {
+            height: 25%;
+            position: relative;
+            & .thumbnail-container {
+              width: 75%;
+              margin: auto;
+              display: flex;
+              overflow: hidden;
+              height: 100%;
+              & .thumbnail {
+                border: 1px solid $dark-grey;
+                margin: 0 5px;
+                width: 60px;
+                height: 70px;
+                & img {
+                  width: 50px;
+                  cursor: pointer;
+                }
+              }
+            }
+            & .i-arrow_grey {
+              position: absolute;
+              cursor: pointer;
+              &.prev {
+                top: 20%;
+                transform: rotateZ(90deg) translateY(-50%);
+                left: -20px;
+              }
+              &.next {
+                top: 20%;
+                transform: rotateZ(-90deg) translateY(-50%);
+                left: 285px;
+              }
+            }
+          }
+        }
+
       }
       &.main {
         width: 67%;
@@ -82,6 +141,9 @@ export default {
         & .header {
           justify-content: space-between;
           padding-top: 30px;
+          & .i-multiply {
+            cursor: pointer;
+          }
         }
         & .main-info {
           justify-content: space-between;
@@ -110,7 +172,6 @@ export default {
                 margin-bottom: 10px;
               }
               & .icon {
-
                 cursor: pointer;
                 position: absolute;
                 top: 50%;
@@ -137,6 +198,7 @@ export default {
           background: $dark-grey;
           justify-content: space-between;
           align-items: center;
+          margin-bottom: -1px;
           & p {
             color: $white;
             font-size: 1.5rem;
